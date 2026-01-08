@@ -1,6 +1,8 @@
+'use client';
 import { motion } from "framer-motion";
 import { ExternalLink, Eye, Github, Star } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -103,12 +105,12 @@ export const Portfolio = () => {
               opacity: 0.15
             }} 
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
+              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0
             }} 
             animate={{
-              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)],
-              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)],
+              x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
+              y: [null, typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0],
               scale: [1, 1.5, 1],
               rotate: [0, 360]
             }}
@@ -220,13 +222,16 @@ export const Portfolio = () => {
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* Project Image with Enhanced Overlay */}
-              <div className="relative overflow-hidden rounded-t-3xl">
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-72 object-cover transition-transform duration-700"
-                  whileHover={{ scale: 1.15 }}
-                />
+              <div className="relative overflow-hidden rounded-t-3xl h-72">
+                <motion.div className="w-full h-full" whileHover={{ scale: 1.15 }}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-700"
+                  />
+                </motion.div>
                 
                 {/* Enhanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">

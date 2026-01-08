@@ -1,7 +1,8 @@
-
+'use client';
 import { motion } from "framer-motion";
 import { Award, Zap, Target, Users, Palette, TrendingUp, Brain, Rocket, Lightbulb } from "lucide-react";
 import ProfileCard from "./ProfileCard";
+import React from 'react';
 
 export const About = () => {
   const skills = [{
@@ -88,12 +89,12 @@ export const About = () => {
               opacity: 0.1
             }} 
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
+              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0
             }} 
             animate={{
-              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)],
-              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)],
+              x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
+              y: [null, typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0],
               scale: [1, 1.5, 1],
               rotate: [0, 360]
             }} 

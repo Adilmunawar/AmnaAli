@@ -1,8 +1,9 @@
-
+'use client';
 
 import { motion } from "framer-motion";
 import { Sparkles, Heart, ArrowUp, Linkedin, Instagram, Facebook, Users, Phone, Mail, MapPin } from "lucide-react";
 import Ballpit from "./Ballpit";
+import React from "react";
 
 export const Footer = () => {
   const socialLinks = [
@@ -71,14 +72,14 @@ export const Footer = () => {
               opacity: 0.1
             }} 
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * 400
+                x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+                y: Math.random() * 400
             }} 
             animate={{
-              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)],
-              y: [null, Math.random() * 400],
-              scale: [1, 1.3, 1],
-              rotate: [0, 360]
+                x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
+                y: [null, Math.random() * 400],
+                scale: [1, 1.3, 1],
+                rotate: [0, 360]
             }} 
             transition={{
               duration: 12 + i * 2,

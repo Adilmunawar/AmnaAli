@@ -1,4 +1,4 @@
-
+'use client';
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 
@@ -208,7 +208,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [amplitude]);
+  }, [amplitude, blend, colorStops]);
 
   return (
     <div 

@@ -1,4 +1,4 @@
-
+'use client';
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles, Code, Palette, TrendingUp, ChevronRight, Star, Zap } from "lucide-react";
 import { useState, useEffect } from "react";

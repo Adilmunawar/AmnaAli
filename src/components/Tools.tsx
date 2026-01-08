@@ -1,5 +1,8 @@
+'use client';
 import { motion } from "framer-motion";
 import { Palette, Search, TrendingUp, Zap } from "lucide-react";
+import Image from "next/image";
+
 export const Tools = () => {
   const tools = [{
     category: "Design Tools",
@@ -191,16 +194,21 @@ export const Tools = () => {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}>
-                          <motion.img src={tool.image} alt={tool.name} className="w-12 h-12 mx-auto mb-3 object-contain filter drop-shadow-lg" whileHover={{
+                          <motion.div whileHover={{
                       rotate: [0, 360],
                       filter: "drop-shadow(0 8px 16px rgba(255, 255, 255, 0.5))"
                     }} transition={{
                       duration: 0.6
-                    }} onError={e => {
-                      console.log(`Failed to load image for ${tool.name}:`, e.currentTarget.src);
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.nextElementSibling?.classList.add('mt-6');
-                    }} />
+                    }} className="w-12 h-12 mx-auto mb-3 relative">
+                            <Image
+                                src={tool.image}
+                                alt={tool.name}
+                                layout="fill"
+                                objectFit="contain"
+                                className="filter drop-shadow-lg"
+                                unoptimized
+                             />
+                          </motion.div>
                           <motion.p whileHover={{
                       scale: 1.05
                     }} className="text-xs font-semibold text-center leading-tight transition-colors drop-shadow-sm text-gray-950">

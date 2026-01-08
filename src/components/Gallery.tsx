@@ -1,4 +1,4 @@
-
+'use client';
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause, RotateCcw } from "lucide-react";
@@ -88,14 +88,14 @@ export const Gallery = () => {
               opacity: 0.15
             }} 
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
+                x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+                y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0
             }} 
             animate={{
-              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)],
-              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)],
-              scale: [1, 1.5, 1],
-              rotate: [0, 360]
+                x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
+                y: [null, typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0],
+                scale: [1, 1.5, 1],
+                rotate: [0, 360]
             }} 
             transition={{
               duration: 15 + i * 3,

@@ -1,7 +1,8 @@
-
+'use client';
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu, X, Sparkles, Home, User, Settings, Contact, Briefcase, Wrench } from "lucide-react";
+import Link from 'next/link';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,35 +67,35 @@ export const Navigation = () => {
               {navItems.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
-                  <motion.a
+                  (<Link
                     key={item.name}
                     href={item.href}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative px-4 py-2 rounded-full transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {/* Hover Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-500/30 via-blue-500/30 to-slate-500/30 rounded-full opacity-0 group-hover:opacity-100"
-                      transition={{ duration: 0.3 }}
-                    />
-                    
-                    {/* Content */}
-                    <div className="relative z-10 flex items-center space-x-2">
-                      <IconComponent className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-                      <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors">
-                        {item.name}
-                      </span>
-                    </div>
-                    
-                    {/* Centered Active Indicator */}
-                    <motion.div
-                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-400 group-hover:w-3/4"
-                      transition={{ duration: 0.3 }}
-                    />
-                  </motion.a>
+                    passHref
+                    legacyBehavior>
+                    <motion.a
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="group relative px-4 py-2 rounded-full transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {/* Hover Background */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-indigo-500/30 via-blue-500/30 to-slate-500/30 rounded-full opacity-0 group-hover:opacity-100"
+                        transition={{ duration: 0.3 }} />
+                      {/* Content */}
+                      <div className="relative z-10 flex items-center space-x-2">
+                        <IconComponent className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+                        <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors">
+                          {item.name}
+                        </span>
+                      </div>
+                      {/* Centered Active Indicator */}
+                      <motion.div
+                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-400 group-hover:w-3/4"
+                        transition={{ duration: 0.3 }} />
+                    </motion.a>
+                  </Link>)
                 );
               })}
             </div>
@@ -122,18 +123,22 @@ export const Navigation = () => {
             {navItems.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <motion.a
+                (<Link
                   key={item.name}
                   href={item.href}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center space-x-3 text-white/80 hover:text-white hover:bg-white/10 transition-all py-3 px-4 rounded-xl font-medium"
-                >
-                  <IconComponent className="w-5 h-5" />
-                  <span>{item.name}</span>
-                </motion.a>
+                  passHref
+                  legacyBehavior>
+                  <motion.a
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center space-x-3 text-white/80 hover:text-white hover:bg-white/10 transition-all py-3 px-4 rounded-xl font-medium"
+                  >
+                    <IconComponent className="w-5 h-5" />
+                    <span>{item.name}</span>
+                  </motion.a>
+                </Link>)
               );
             })}
           </div>
