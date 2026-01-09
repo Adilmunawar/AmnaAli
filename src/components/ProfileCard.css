@@ -70,31 +70,31 @@
   background-position: 0 0, 0 0, 50% 50%, 0 0;
   background-image: 
     radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y), 
-      hsla(210, 100%, 80%, var(--card-opacity)) 4%, 
-      hsla(210, 50%, 70%, calc(var(--card-opacity) * 0.75)) 10%, 
-      hsla(210, 25%, 60%, calc(var(--card-opacity) * 0.5)) 50%, 
+      hsla(158, 81%, 39%, var(--card-opacity)) 4%, 
+      hsla(174, 85%, 31%, calc(var(--card-opacity) * 0.75)) 10%, 
+      hsla(222, 47%, 11%, calc(var(--card-opacity) * 0.5)) 50%, 
       hsla(210, 0%, 50%, 0) 100%), 
-    radial-gradient(35% 52% at 55% 20%, #4f46e5c4 0%, #1e40af00 100%), 
-    radial-gradient(100% 100% at 50% 50%, #3b82f6ff 1%, #1e40af00 76%), 
-    linear-gradient(45deg, #3b82f6ff 0%, #1e40afff 30%, #4f46e1ff 60%, #3b82f6ff 100%);
+    radial-gradient(35% 52% at 55% 20%, #10B981c4 0%, #0F172A00 100%), 
+    radial-gradient(100% 100% at 50% 50%, #0D9488ff 1%, #0F172A00 76%), 
+    linear-gradient(45deg, #10B981ff 0%, #0D9488ff 30%, #0F172A 60%, #10B981ff 100%);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(241, 245, 249, 0.1);
 }
 
 .pc-card:hover,
 .pc-card.active {
   transition: none;
   transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(241, 245, 249, 0.3);
   background-image: 
     radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y), 
-      hsla(120, 100%, 80%, var(--card-opacity)) 4%, 
-      hsla(120, 50%, 70%, calc(var(--card-opacity) * 0.75)) 10%, 
-      hsla(120, 25%, 60%, calc(var(--card-opacity) * 0.5)) 50%, 
-      hsla(120, 0%, 50%, 0) 100%), 
-    radial-gradient(35% 52% at 55% 20%, #22c55ec4 0%, #eab30800 100%), 
-    radial-gradient(100% 100% at 50% 50%, #3b82f6ff 1%, #eab30800 76%), 
-    linear-gradient(45deg, #22c55eff 0%, #eab308ff 50%, #3b82f6ff 100%);
+      hsla(158, 100%, 80%, var(--card-opacity)) 4%, 
+      hsla(158, 50%, 70%, calc(var(--card-opacity) * 0.75)) 10%, 
+      hsla(158, 25%, 60%, calc(var(--card-opacity) * 0.5)) 50%, 
+      hsla(158, 0%, 50%, 0) 100%), 
+    radial-gradient(35% 52% at 55% 20%, #10B981c4 0%, #eab30800 100%), 
+    radial-gradient(100% 100% at 50% 50%, #0D9488ff 1%, #eab30800 76%), 
+    linear-gradient(45deg, #10B981ff 0%, #eab308ff 50%, #0D9488ff 100%);
 }
 
 .pc-card * {
@@ -109,7 +109,7 @@
   inset: 1px;
   position: absolute;
   background-image: var(--inner-gradient);
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: hsla(222, 47%, 11%, 0.85);
   transform: translate3d(0, 0, 0.01px);
   backdrop-filter: blur(10px);
 }
@@ -198,7 +198,7 @@
 .pc-glare {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
-  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(120, 25%, 80%) 12%, hsla(120, 40%, 30%, 0.8) 90%);
+  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(158, 81%, 50%) 12%, hsla(158, 81%, 20%, 0.8) 90%);
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
   z-index: 4;
@@ -242,9 +242,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.5);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(241, 245, 249, 0.2);
   border-radius: 10px;
   padding: 6px 8px;
   pointer-events: auto;
@@ -253,8 +253,8 @@
 
 .pc-card:hover .pc-user-info,
 .pc-card.active .pc-user-info {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(241, 245, 249, 0.3);
   transform: translateY(-2px);
 }
 
@@ -269,14 +269,14 @@
   height: 18px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(241, 245, 249, 0.2);
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
 
 .pc-card:hover .pc-mini-avatar,
 .pc-card.active .pc-mini-avatar {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(241, 245, 249, 0.4);
   transform: scale(1.1);
 }
 
@@ -297,35 +297,35 @@
 .pc-handle {
   font-size: 9px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(241, 245, 249, 0.95);
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .pc-status {
   font-size: 7px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(241, 245, 249, 0.8);
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .pc-contact-btn {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(241, 245, 249, 0.2);
   border-radius: 6px;
   padding: 3px 6px;
   font-size: 7px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(241, 245, 249, 0.95);
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(16, 185, 129, 0.2);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .pc-contact-btn:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.4);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -353,7 +353,7 @@
   margin: 0;
   font-size: 13px;
   margin: 0;
-  background-image: linear-gradient(to bottom, #fff, #22c55e);
+  background-image: linear-gradient(to bottom, #F1F5F9, #10B981);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -364,7 +364,7 @@
 
 .pc-card:hover .pc-details h3,
 .pc-card.active .pc-details h3 {
-  background-image: linear-gradient(to bottom, #fff, #eab308);
+  background-image: linear-gradient(to bottom, #F1F5F9, #eab308);
   transform: scale(1.05);
 }
 
@@ -376,7 +376,7 @@
   font-size: 9px;
   margin: 0 auto;
   width: min-content;
-  background-image: linear-gradient(to bottom, #fff, #3b82f6);
+  background-image: linear-gradient(to bottom, #F1F5F9, #0D9488);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -387,7 +387,7 @@
 
 .pc-card:hover .pc-details p,
 .pc-card.active .pc-details p {
-  background-image: linear-gradient(to bottom, #fff, #22c55e);
+  background-image: linear-gradient(to bottom, #F1F5F9, #10B981);
   transform: scale(1.05);
 }
 

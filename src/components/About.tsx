@@ -8,7 +8,7 @@ export const About = () => {
   const skills = [{
     name: "Creative Design",
     level: 98,
-    color: "from-violet-500 via-fuchsia-500 to-pink-500",
+    color: "from-teal-500 via-green-500 to-emerald-500",
     icon: Palette,
     description: "Transforming visions into stunning visual narratives"
   }, {
@@ -35,7 +35,7 @@ export const About = () => {
       icon: Award,
       number: "250+",
       label: "Premium Projects",
-      color: "from-violet-400 to-purple-600"
+      color: "from-teal-400 to-emerald-600"
     }, {
       icon: Users,
       number: "50+",
@@ -50,14 +50,14 @@ export const About = () => {
       icon: Brain,
       number: "4+",
       label: "Years Mastery",
-      color: "from-fuchsia-400 to-pink-600"
+      color: "from-green-400 to-teal-600"
     }
   ];
   return (
-    <section id="about" className="py-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950 relative overflow-hidden">
+    <section id="about" className="py-32 bg-background relative overflow-hidden">
       {/* Advanced Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-900/20 via-transparent to-transparent" />
         
         {/* Animated Mesh Pattern */}
         <motion.div 
@@ -71,7 +71,7 @@ export const About = () => {
             ease: "linear"
           }} 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3e%3cpath d='m 60 0 l 0 60 l -60 0 l 0 -60 z' fill='none' stroke='%23a855f7' stroke-width='1'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)'/%3e%3c/svg%3e")`,
+            backgroundImage: `url("data:image/svg+xml,%3csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3e%3cpath d='m 60 0 l 0 60 l -60 0 l 0 -60 z' fill='none' stroke='%230D9488' stroke-width='1'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)'/%3e%3c/svg%3e")`,
             backgroundSize: "60px 60px"
           }} 
         />
@@ -83,7 +83,7 @@ export const About = () => {
             className="absolute rounded-full blur-2xl" 
             style={{
               background: `linear-gradient(45deg, 
-                ${i % 2 === 0 ? '#8b5cf6, #06b6d4' : '#ec4899, #10b981'})`,
+                ${i % 2 === 0 ? '#10B981, #0D9488' : '#14B8A6, #0F766E'})`,
               width: `${150 + i * 50}px`,
               height: `${150 + i * 50}px`,
               opacity: 0.1
@@ -150,16 +150,16 @@ export const About = () => {
               transition={{ duration: 1.5 }} 
               viewport={{ once: true }}
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent blur-sm">
+              <span className="absolute inset-0 bg-gradient-to-r from-teal-400 via-green-400 to-cyan-400 bg-clip-text text-transparent blur-sm">
                 About Me
               </span>
-              <span className="relative bg-gradient-to-r from-white via-violet-200 to-cyan-200 bg-clip-text text-transparent">
+              <span className="relative bg-gradient-to-r from-foreground via-teal-200 to-cyan-200 bg-clip-text text-transparent">
                 About Me
               </span>
             </motion.h2>
             
             <motion.p 
-              className="text-xl text-gray-300 max-w-2xl font-light leading-relaxed" 
+              className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed" 
               initial={{ opacity: 0, scale: 0.8 }} 
               whileInView={{ opacity: 1, scale: 1 }} 
               transition={{ duration: 1, delay: 0.3 }} 
@@ -183,25 +183,25 @@ export const About = () => {
               className="relative bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-2xl rounded-3xl p-10 border border-white/10 group overflow-hidden" 
               whileHover={{
                 scale: 1.02,
-                boxShadow: "0 40px 80px -20px rgba(139, 92, 246, 0.3)"
+                boxShadow: "0 40px 80px -20px rgba(16, 185, 129, 0.3)"
               }}
             >
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-fuchsia-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100" 
+                className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-green-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100" 
                 transition={{ duration: 0.8 }} 
               />
               
               <div className="relative z-10">
                 <motion.h3 
-                  className="text-3xl font-bold text-white mb-6 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent" 
+                  className="text-3xl font-bold text-foreground mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent" 
                   whileHover={{ scale: 1.05 }}
                 >
                   Visionary Creative Leader
                 </motion.h3>
                 
-                <div className="space-y-4 text-gray-300 leading-relaxed">
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p className="text-lg">
-                    As the visionary founder of <span className="text-violet-400 font-semibold">ARS Ltd.</span>, 
+                    As the visionary founder of <span className="text-accent font-semibold">ARS Ltd.</span>, 
                     I've revolutionized the intersection of creativity and strategic business growth. My expertise 
                     encompasses cutting-edge design methodologies, data-driven marketing strategies, and 
                     breakthrough brand innovation.
@@ -215,7 +215,7 @@ export const About = () => {
 
                 {/* Decorative Elements */}
                 <motion.div 
-                  className="absolute top-4 right-4 w-20 h-20 rounded-full bg-gradient-to-r from-violet-400/20 to-cyan-400/20 blur-xl" 
+                  className="absolute top-4 right-4 w-20 h-20 rounded-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-xl" 
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 180, 360]
@@ -278,7 +278,7 @@ export const About = () => {
                     </motion.div>
                     
                     <motion.h4 
-                      className="text-4xl font-black text-white mb-3" 
+                      className="text-4xl font-black text-foreground mb-3" 
                       initial={{ opacity: 0, y: 20 }} 
                       whileInView={{ opacity: 1, y: 0 }} 
                       transition={{ delay: index * 0.1 + 0.5 }} 
@@ -288,7 +288,7 @@ export const About = () => {
                     </motion.h4>
                     
                     <motion.p 
-                      className="text-gray-300 font-medium" 
+                      className="text-muted-foreground font-medium" 
                       initial={{ opacity: 0 }} 
                       whileInView={{ opacity: 1 }} 
                       transition={{ delay: index * 0.1 + 0.7 }} 

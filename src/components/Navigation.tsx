@@ -26,13 +26,13 @@ export const Navigation = () => {
       {/* Modern Navigation Bar */}
       <div className="max-w-4xl mx-auto mt-4 px-4">
         <motion.div 
-          className="relative bg-black/80 backdrop-blur-2xl border border-white/10 rounded-full shadow-2xl overflow-hidden"
+          className="relative bg-slate-900/80 backdrop-blur-2xl border border-white/10 rounded-full shadow-2xl overflow-hidden"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
           {/* Gradient Background Effect */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-blue-500/20 to-slate-500/20 opacity-0 hover:opacity-100"
+            className="absolute inset-0 bg-gradient-to-r from-teal-500/20 via-green-500/20 to-slate-500/20 opacity-0 hover:opacity-100"
             transition={{ duration: 0.6 }}
           />
           
@@ -43,9 +43,9 @@ export const Navigation = () => {
               className="flex items-center space-x-3"
             >
               <motion.div className="relative">
-                <Sparkles className="w-8 h-8 text-white drop-shadow-lg" />
+                <Sparkles className="w-8 h-8 text-accent drop-shadow-lg" />
                 <motion.div
-                  className="absolute inset-0 w-8 h-8 bg-blue-400 rounded-full blur-lg opacity-40"
+                  className="absolute inset-0 w-8 h-8 bg-accent rounded-full blur-lg opacity-40"
                   animate={{
                     scale: [1, 1.3, 1],
                   }}
@@ -81,7 +81,7 @@ export const Navigation = () => {
                     >
                       {/* Hover Background */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-indigo-500/30 via-blue-500/30 to-slate-500/30 rounded-full opacity-0 group-hover:opacity-100"
+                        className="absolute inset-0 bg-gradient-to-r from-teal-500/30 via-green-500/30 to-slate-500/30 rounded-full opacity-0 group-hover:opacity-100"
                         transition={{ duration: 0.3 }} />
                       {/* Content */}
                       <div className="relative z-10 flex items-center space-x-2">
@@ -92,7 +92,7 @@ export const Navigation = () => {
                       </div>
                       {/* Centered Active Indicator */}
                       <motion.div
-                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-400 group-hover:w-3/4"
+                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-green-400 group-hover:w-3/4"
                         transition={{ duration: 0.3 }} />
                     </motion.a>
                   </Link>)
@@ -119,7 +119,7 @@ export const Navigation = () => {
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden mt-2"
         >
-          <div className="bg-black/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-4 space-y-2">
+          <div className="bg-slate-900/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-4 space-y-2">
             {navItems.map((item, index) => {
               const IconComponent = item.icon;
               return (
