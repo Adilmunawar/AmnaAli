@@ -8,7 +8,6 @@ import { Portfolio } from "@/components/Portfolio";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import SplashCursor from "@/components/SplashCursor";
 import Aurora from "@/components/Aurora";
 
 const Index = () => {
@@ -24,7 +23,6 @@ const Index = () => {
       
       {/* Content overlay */}
       <div className="relative z-10">
-        <SplashCursor />
         <Navigation />
         <main>
           <Hero />

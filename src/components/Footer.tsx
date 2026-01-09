@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Heart, ArrowUp, Linkedin, Instagram, Facebook, Users, Phone, Mail, MapPin } from "lucide-react";
-import Ballpit from "./Ballpit";
 import React from "react";
 
 export const Footer = () => {
@@ -27,18 +26,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-pink-900/20 via-purple-950/30 to-pink-900/20 overflow-hidden min-h-[500px]">
-      {/* Ballpit Effect Layer */}
-      <div className="absolute inset-0 z-0">
-        <Ballpit
-          count={150}
-          gravity={0.5}
-          friction={0.99}
-          wallBounce={0.6}
-          followCursor={false}
-          maxVelocity={0.8}
-        />
-      </div>
+    <footer className="relative bg-gradient-to-br from-pink-900/20 via-purple-950/30 to-pink-900/20 overflow-hidden pt-16">
       {/* Pink Gradient Aura Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-900/30 via-purple-900/20 to-pink-900/30" />
@@ -92,7 +80,7 @@ export const Footer = () => {
 
       <div className="relative z-20">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
             {/* Brand Section */}
             <motion.div
@@ -112,7 +100,11 @@ export const Footer = () => {
                   <motion.div
                     className="absolute inset-0 w-10 h-10 bg-purple-400 rounded-full blur-xl opacity-30"
                     animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
                   />
                 </motion.div>
                 <h3 className="text-3xl font-bold text-white">Amna Ali</h3>
@@ -215,7 +207,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/10 mt-16">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <motion.p

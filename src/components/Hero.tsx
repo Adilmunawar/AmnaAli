@@ -5,23 +5,6 @@ import { useState, useEffect } from "react";
 import ShinyText from "./ShinyText";
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   const floatingIcons = [
     {
       icon: Code,
@@ -75,20 +58,6 @@ export const Hero = () => {
           </motion.div>
         );
       })}
-
-      {/* Enhanced Cursor Trail */}
-      <motion.div
-        className="fixed w-6 h-6 rounded-full pointer-events-none z-50 bg-gradient-to-r from-cyan-400 to-purple-400 opacity-60"
-        animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 30
-        }}
-      />
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
