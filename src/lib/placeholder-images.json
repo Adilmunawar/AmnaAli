@@ -18,5 +18,25 @@
     "id": "work-brand-makeover",
     "src": "https://picsum.photos/seed/brand-makeover/800/600",
     "hint": "modern digital interface"
+  },
+  {
+    "id": "insights-job-post",
+    "src": "https://picsum.photos/seed/job-post/800/600",
+    "hint": "recruitment analytics dashboard"
+  },
+  {
+    "id": "insights-workforce",
+    "src": "https://picsum.photos/seed/workforce/800/600",
+    "hint": "diverse team meeting"
+  },
+  {
+    "id": "insights-digital-headhunter",
+    "src": "https://picsum.photos/seed/headhunter/800/600",
+    "hint": "marketing funnel diagram"
+  },
+  {
+    "id": "insights-hidden-talent",
+    "src": "https://picsum.photos/seed/hidden-talent/800/600",
+    "hint": "magnifying glass abstract"
   }
 ]

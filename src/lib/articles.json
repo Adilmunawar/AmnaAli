@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": "job-post-converting",
+    "title": "Why Your Job Post Isn't Converting: The Role of Design in Recruitment",
+    "excerpt": "Discover how visual design and branding can dramatically increase the quality and quantity of your applicants.",
+    "category": "Recruitment & Design",
+    "imageId": "insights-job-post"
+  },
+  {
+    "id": "managing-workforce",
+    "title": "Managing a 1,000-Person Workforce: Lessons from the World Bank LRMIS Project",
+    "excerpt": "A deep dive into the operational strategies required to manage large-scale teams effectively, ensuring compliance and productivity.",
+    "category": "HR Operations",
+    "imageId": "insights-workforce"
+  },
+  {
+    "id": "digital-headhunter",
+    "title": "The Digital Headhunter: How Marketing Funnels Apply to Hiring",
+    "excerpt": "Learn to think like a marketer to attract and nurture passive candidates who aren't actively looking for a new role.",
+    "category": "Growth & Strategy",
+    "imageId": "insights-digital-headhunter"
+  },
+  {
+    "id": "beyond-resume",
+    "title": "Beyond the Resume: Uncovering Hidden Talent",
+    "excerpt": "Traditional resumes only tell part of the story. Explore modern sourcing techniques to find exceptional talent where others aren't looking.",
+    "category": "Talent Acquisition",
+    "imageId": "insights-hidden-talent"
+  }
+]

@@ -1,9 +1,11 @@
+
 'use client';
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Work } from "@/components/Work";
+import { Insights } from "@/components/Insights";
 
 const Index = () => {
   return (
@@ -13,6 +15,7 @@ const Index = () => {
         <Hero />
         <About />
         <Work />
+        <Insights />
       </main>
       <Footer />
     </>
