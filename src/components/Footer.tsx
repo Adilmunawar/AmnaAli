@@ -163,7 +163,7 @@ export const Footer = () => {
                 viewport={{ once: true }}
                 className="text-gray-400 flex items-center gap-2"
               >
-                © 2025 Amna Ali. Proudly Designed with <Heart className="w-4 h-4 text-red-400" /> by team Amna Ali
+                © {new Date().getFullYear()} Amna Ali. Proudly developed with <Heart className="w-4 h-4 text-red-400" /> by Adil Munawar
               </motion.p>
 
               <motion.button
