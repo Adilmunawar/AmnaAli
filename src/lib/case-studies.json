@@ -1,0 +1,29 @@
+[
+  {
+    "id": "mass-hiring",
+    "title": "The Mass Hiring Scale-Up",
+    "company": "AOS Tech / World Bank",
+    "challenge": "AOS Tech needed to onboard staff for the World Bank LRMIS project rapidly.",
+    "solution": "Implemented a streamlined digital onboarding process and recruitment drive.",
+    "result": "Managed full-spectrum operations for 1,000+ employees.",
+    "imageId": "work-mass-hiring"
+  },
+  {
+    "id": "talent-pipeline",
+    "title": "International Talent Pipeline",
+    "company": "Talent.pros.pk",
+    "challenge": "Needed specialized talent for global clients across diverse industries.",
+    "solution": "Executed a hybrid recruitment strategy using LinkedIn Recruiter and direct outreach.",
+    "result": "Successfully connected skilled professionals with companies worldwide.",
+    "imageId": "work-talent-pipeline"
+  },
+  {
+    "id": "brand-makeover",
+    "title": "The Employer Brand Makeover",
+    "company": "Confidential Client",
+    "challenge": "Receiving low-quality applications due to a poor digital presence and employer brand.",
+    "solution": "Redesigned the careers page and created branded LinkedIn assets to attract top-tier candidates.",
+    "result": "2x increase in qualified applicants within one quarter.",
+    "imageId": "work-brand-makeover"
+  }
+]

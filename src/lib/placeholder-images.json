@@ -3,5 +3,20 @@
     "id": "about-amna",
     "src": "https://picsum.photos/seed/amna-ali/800/1000",
     "hint": "professional woman portrait"
+  },
+  {
+    "id": "work-mass-hiring",
+    "src": "https://picsum.photos/seed/mass-hiring/800/600",
+    "hint": "corporate office building"
+  },
+  {
+    "id": "work-talent-pipeline",
+    "src": "https://picsum.photos/seed/talent-pipeline/800/600",
+    "hint": "global connection network"
+  },
+  {
+    "id": "work-brand-makeover",
+    "src": "https://picsum.photos/seed/brand-makeover/800/600",
+    "hint": "modern digital interface"
   }
 ]

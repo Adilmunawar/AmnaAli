@@ -15,9 +15,9 @@ export const Footer = () => {
   const footerNavItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Tools", href: "#tools" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Work", href: "#work" },
     { name: "Services", href: "#services" },
+    { name: "Insights", href: "#insights" },
     { name: "Contact", href: "#contact" }
   ];
 
