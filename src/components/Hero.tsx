@@ -3,31 +3,9 @@ import { motion } from "framer-motion";
 import { ArrowDown, Users, Briefcase, TrendingUp, ChevronRight, Award } from "lucide-react";
 
 export const Hero = () => {
-  const floatingIcons = [
-    { icon: Users, delay: 0, position: { x: "10%", y: "20%" } },
-    { icon: Briefcase, delay: 1, position: { x: "85%", y: "30%" } },
-    { icon: TrendingUp, delay: 2, position: { x: "15%", y: "70%" } },
-    { icon: Award, delay: 1.5, position: { x: "80%", y: "75%" } }
-  ];
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden flex items-center justify-center">
-      {/* Floating Icons */}
-      {floatingIcons.map((item, index) => {
-        const IconComponent = item.icon;
-        return (
-          <motion.div
-            key={index}
-            className="absolute text-accent/30"
-            style={{ left: item.position.x, top: item.position.y }}
-            animate={{ y: [-15, 15, -15], rotate: [0, 180, 0], opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 10 + index * 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <IconComponent className="w-8 h-8" />
-          </motion.div>
-        );
-      })}
-
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <motion.div
