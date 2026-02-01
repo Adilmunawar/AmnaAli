@@ -1,7 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Menu, X, Sparkles, Home, User, Settings, Contact, Briefcase, Wrench } from "lucide-react";
+import { Menu, X, Sparkles, Home, User, Settings, Contact, Briefcase, BrainCircuit } from "lucide-react";
 import Link from 'next/link';
 
 export const Navigation = () => {
@@ -10,9 +10,9 @@ export const Navigation = () => {
   const navItems = [
     { name: "Home", href: "#home", icon: Home },
     { name: "About", href: "#about", icon: User },
-    { name: "Tools", href: "#tools", icon: Wrench },
-    { name: "Portfolio", href: "#portfolio", icon: Briefcase },
     { name: "Services", href: "#services", icon: Settings },
+    { name: "Work", href: "#work", icon: Briefcase },
+    { name: "Insights", href: "#insights", icon: BrainCircuit },
     { name: "Contact", href: "#contact", icon: Contact }
   ];
 

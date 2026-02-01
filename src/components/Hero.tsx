@@ -1,30 +1,13 @@
 'use client';
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles, Code, Palette, TrendingUp, ChevronRight, Star } from "lucide-react";
-import ShinyText from "./ShinyText";
+import { ArrowDown, Users, Briefcase, TrendingUp, ChevronRight, Award } from "lucide-react";
 
 export const Hero = () => {
   const floatingIcons = [
-    {
-      icon: Code,
-      delay: 0,
-      position: { x: "10%", y: "20%" }
-    },
-    {
-      icon: Palette,
-      delay: 1,
-      position: { x: "85%", y: "30%" }
-    },
-    {
-      icon: TrendingUp,
-      delay: 2,
-      position: { x: "15%", y: "70%" }
-    },
-    {
-      icon: Sparkles,
-      delay: 1.5,
-      position: { x: "80%", y: "75%" }
-    }
+    { icon: Users, delay: 0, position: { x: "10%", y: "20%" } },
+    { icon: Briefcase, delay: 1, position: { x: "85%", y: "30%" } },
+    { icon: TrendingUp, delay: 2, position: { x: "15%", y: "70%" } },
+    { icon: Award, delay: 1.5, position: { x: "80%", y: "75%" } }
   ];
 
   return (
@@ -36,22 +19,9 @@ export const Hero = () => {
           <motion.div
             key={index}
             className="absolute text-accent/30"
-            style={{
-              left: item.position.x,
-              top: item.position.y
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              rotate: [0, 360],
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.2, 1]
-            }}
-            transition={{
-              duration: 6 + index,
-              repeat: Infinity,
-              delay: item.delay,
-              ease: "easeInOut"
-            }}
+            style={{ left: item.position.x, top: item.position.y }}
+            animate={{ y: [-15, 15, -15], rotate: [0, 180, 0], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 10 + index * 2, repeat: Infinity, ease: "easeInOut" }}
           >
             <IconComponent className="w-8 h-8" />
           </motion.div>
@@ -66,160 +36,91 @@ export const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          {/* Enhanced Logo Animation */}
-          <motion.div
-            className="inline-block mb-8 relative"
-            animate={{ rotate: [0, 360] }}
-            transition={{
-              rotate: {
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }
-            }}
-          >
-            <div className="relative">
-              <Sparkles className="w-20 h-20 text-accent filter drop-shadow-2xl" />
-              <motion.div
-                className="absolute inset-0 w-20 h-20 bg-gradient-to-r from-accent to-secondary rounded-full blur-xl opacity-30"
-                animate={{ scale: [1, 1.5, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            </div>
-          </motion.div>
-          
-          {/* Enhanced Title with better typography */}
           <motion.h1
-            className="text-7xl md:text-8xl lg:text-9xl font-black mb-8 relative"
+            className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 relative text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
           >
-            <span className="bg-gradient-to-r from-white via-green-200 to-teal-200 bg-clip-text text-transparent filter drop-shadow-lg">
-              Amna Ali
-            </span>
-            <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-secondary/20 blur-3xl -z-10"
-              animate={{ opacity: [0.2, 0.4, 0.2] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+            Amna Ali
           </motion.h1>
           
-          {/* Enhanced Subtitle */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="mb-8"
           >
-            <div className="inline-block bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl px-8 py-4 mb-8">
-              <h2 className="text-2xl md:text-3xl text-transparent bg-gradient-to-r from-green-300 to-teal-300 bg-clip-text font-semibold">
-                Creative Professional & Brand Strategist
+            <div className="inline-block bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-3 mb-6">
+              <h2 className="text-xl md:text-2xl text-slate-200 font-semibold">
+                Expert HR Consultant & Growth Strategist
               </h2>
             </div>
             
-            {/* Enhanced Role Tags */}
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {[
-                {
-                  text: "Creative Director",
-                  gradient: "from-accent to-secondary",
-                  icon: Palette
-                },
-                {
-                  text: "Brand Designer",
-                  gradient: "from-secondary to-teal-600",
-                  icon: Star
-                },
-                {
-                  text: "Growth Strategist",
-                  gradient: "from-emerald-500 to-teal-600",
-                  icon: TrendingUp
-                }
-              ].map((role, index) => {
-                const IconComponent = role.icon;
-                return (
+                { text: "Strategic Recruitment" },
+                { text: "Operations & Compliance" },
+                { text: "Employer Branding" },
+              ].map((role, index) => (
                   <motion.div
                     key={role.text}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                    className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${role.gradient} rounded-full text-white text-sm font-medium`}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-slate-300 text-sm font-medium"
                   >
-                    <IconComponent className="w-4 h-4" />
                     {role.text}
                   </motion.div>
-                );
-              })}
+                ))}
             </div>
           </motion.div>
 
-          {/* Enhanced Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.4 }}
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+            transition={{ duration: 1, delay: 1.2 }}
+            className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Crafting digital experiences that transcend expectations through 
-            <span className="text-transparent bg-gradient-to-r from-accent to-secondary bg-clip-text font-semibold"> innovative design</span> and 
-            <span className="text-transparent bg-gradient-to-r from-secondary to-green-400 bg-clip-text font-semibold"> strategic brilliance</span>
+            Partnering with organizations to build high-performing teams through data-driven HR strategies that attract top-tier talent and foster sustainable growth.
           </motion.p>
 
-          {/* Enhanced CTA Buttons with ShinyText */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.8 }}
-            className="flex flex-wrap justify-center gap-6 mb-16"
+            transition={{ duration: 1, delay: 1.5 }}
+            className="flex flex-wrap justify-center gap-4 mb-16"
           >
             <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: '0 10px 20px rgba(16, 185, 129, 0.2)' }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-8 py-4 bg-gradient-to-r from-accent to-secondary rounded-2xl text-white font-bold text-lg shadow-2xl border border-white/20 backdrop-blur-sm overflow-hidden"
+              onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group relative px-7 py-3 bg-accent rounded-xl text-white font-bold text-base shadow-lg border border-transparent transition-all duration-300"
             >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
-              />
               <span className="relative z-10 flex items-center gap-2">
-                <ShinyText text="View My Work" speed={3} />
-                <ChevronRight className="w-5 h-5" />
+                Case Studies
+                <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
+              whileHover={{ scale: 1.05, y: -3, backgroundColor: 'hsla(0,0%,100%,0.1)', borderColor: 'hsla(0,0%,100%,0.3)' }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-8 py-4 bg-white/10 border-2 border-white/30 rounded-2xl text-white font-bold text-lg shadow-2xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 overflow-hidden"
+              className="group relative px-7 py-3 bg-white/5 border-2 border-white/20 rounded-xl text-white font-bold text-base shadow-lg backdrop-blur-sm transition-all duration-300"
             >
-              <motion.div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 flex items-center gap-2">
-                <ShinyText text="Get In Touch" speed={4} />
-                <Sparkles className="w-5 h-5" />
+                Get In Touch
               </span>
             </motion.button>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2.5 }}
+        transition={{ duration: 1, delay: 2 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
@@ -228,6 +129,7 @@ export const Hero = () => {
           className="flex flex-col items-center cursor-pointer"
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         >
+          <span className="text-sm text-white/50 mb-2">Discover More</span>
           <ArrowDown className="w-6 h-6 text-white/60" />
         </motion.div>
       </motion.div>
