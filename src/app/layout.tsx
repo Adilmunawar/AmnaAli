@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Providers from "./providers";
+import Aurora from "@/components/Aurora";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +33,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-            {children}
+            <div className="min-h-screen relative overflow-x-hidden">
+              <Aurora
+                colorStops={["#0F172A", "#0D9488", "#10B981"]}
+                blend={0.7}
+                amplitude={1.2}
+                speed={0.8}
+              />
+              <div className="relative z-10 flex flex-col min-h-screen">
+                {children}
+              </div>
+            </div>
         </Providers>
       </body>
     </html>

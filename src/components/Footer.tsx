@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Sparkles, Heart, ArrowUp, Linkedin, Instagram, Facebook, Users, Phone, Mail, MapPin } from "lucide-react";
+import { Sparkles, Heart, ArrowUp, Linkedin, Instagram, Facebook, Users, Phone, Mail } from "lucide-react";
 import React from "react";
 
 export const Footer = () => {
@@ -26,58 +26,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-pink-900/20 via-purple-950/30 to-pink-900/20 overflow-hidden pt-16">
-      {/* Pink Gradient Aura Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-900/30 via-purple-900/20 to-pink-900/30" />
-        
-        <motion.div 
-          className="absolute inset-0 opacity-20" 
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"]
-          }} 
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }} 
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3e%3cpath d='m 40 0 l 0 40 l -40 0 l 0 -40 z' fill='none' stroke='%23ec4899' stroke-width='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='url(%23grid)'/%3e%3c/svg%3e")`,
-            backgroundSize: "40px 40px"
-          }} 
-        />
-
-        {/* Pink Floating Orbs */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div 
-            key={`footer-orb-${i}`} 
-            className="absolute rounded-full blur-2xl" 
-            style={{
-              background: `linear-gradient(45deg, 
-                ${i % 2 === 0 ? '#ec4899, #f97316' : '#db2777, #e11d48'})`,
-              width: `${100 + i * 30}px`,
-              height: `${100 + i * 30}px`,
-              opacity: 0.1
-            }} 
-            initial={{
-                x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-                y: Math.random() * 400
-            }} 
-            animate={{
-                x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
-                y: [null, Math.random() * 400],
-                scale: [1, 1.3, 1],
-                rotate: [0, 360]
-            }} 
-            transition={{
-              duration: 12 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }} 
-          />
-        ))}
-      </div>
-
+    <footer className="relative bg-slate-950/30 backdrop-blur-md overflow-hidden pt-16 mt-auto">
       <div className="relative z-20">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-6">
@@ -96,9 +45,9 @@ export const Footer = () => {
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                   className="relative"
                 >
-                  <Sparkles className="w-10 h-10 text-purple-400" />
+                  <Sparkles className="w-10 h-10 text-accent" />
                   <motion.div
-                    className="absolute inset-0 w-10 h-10 bg-purple-400 rounded-full blur-xl opacity-30"
+                    className="absolute inset-0 w-10 h-10 bg-accent rounded-full blur-xl opacity-30"
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{
                       duration: 2,
@@ -118,11 +67,11 @@ export const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-purple-400" />
+                  <Mail className="w-5 h-5 text-accent" />
                   <span>contact@arsltd.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-purple-400" />
+                  <Phone className="w-5 h-5 text-accent" />
                   <span>+92 324 8406582</span>
                 </div>
               </div>
@@ -148,17 +97,15 @@ export const Footer = () => {
                     className="group relative block text-gray-300 hover:text-white transition-all duration-300"
                     whileHover={{ x: 5 }}
                   >
-                    {/* Enhanced Hover Background */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-blue-500/20 rounded-lg opacity-0 group-hover:opacity-100 -m-2 p-2"
+                      className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-lg opacity-0 group-hover:opacity-100 -m-2 p-2"
                       transition={{ duration: 0.3 }}
                     />
                     
                     <span className="relative z-10 flex items-center">
                       {item.name}
-                      {/* Centered Underline */}
                       <motion.div
-                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-blue-400 group-hover:w-full"
+                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-accent to-secondary group-hover:w-full"
                         transition={{ duration: 0.3 }}
                       />
                     </span>
@@ -189,13 +136,12 @@ export const Footer = () => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.1, y: -3 }}
-                      className="group relative flex items-center justify-center w-12 h-12 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500/20 hover:to-purple-500/20"
+                      className="group relative flex items-center justify-center w-12 h-12 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-accent/20 hover:to-secondary/20"
                     >
                       <IconComponent className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
                       
-                      {/* Glow Effect */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-xl opacity-0 group-hover:opacity-100 blur-sm"
+                        className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-xl opacity-0 group-hover:opacity-100 blur-sm"
                         transition={{ duration: 0.3 }}
                       />
                     </motion.a>
@@ -220,16 +166,14 @@ export const Footer = () => {
                 © 2025 Amna Ali. Proudly Designed with <Heart className="w-4 h-4 text-red-400" /> by team Amna Ali
               </motion.p>
 
-              {/* Original Circular Back to Top Button */}
               <motion.button
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.15, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 flex items-center justify-center shadow-xl transition-all duration-300"
+                className="group relative w-14 h-14 rounded-full bg-gradient-to-r from-secondary via-accent to-secondary flex items-center justify-center shadow-xl transition-all duration-300"
               >
-                {/* Glowing Ring Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 blur-lg"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-secondary via-accent to-secondary opacity-0 group-hover:opacity-100 blur-lg"
                   animate={{ 
                     rotate: 360,
                     scale: [1, 1.2, 1]
@@ -240,7 +184,6 @@ export const Footer = () => {
                   }}
                 />
                 
-                {/* Animated Border */}
                 <motion.div
                   className="absolute inset-0 rounded-full border-2 border-white/30"
                   animate={{ 
