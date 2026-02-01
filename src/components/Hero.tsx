@@ -25,24 +25,24 @@ export const Hero = () => {
           className="mb-8"
         >
           
-          <motion.p
-            className="text-2xl md:text-3xl font-bold text-accent mb-4"
+          {/* Main Headline */}
+          <motion.h1
+            className="text-5xl md:text-7xl font-black mb-4 relative text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             Amna Ali
-          </motion.p>
+          </motion.h1>
 
-          {/* Main Headline */}
-          <motion.h1
-            className="text-5xl md:text-7xl font-black mb-6 relative text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400"
+           <motion.p
+            className="text-2xl md:text-3xl font-bold text-slate-300 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
             Building High-Performance Teams
-          </motion.h1>
+          </motion.p>
           
           {/* Subtitle */}
           <motion.p
