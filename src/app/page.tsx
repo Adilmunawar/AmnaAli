@@ -1,28 +1,22 @@
 'use client';
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { Tools } from "@/components/Tools";
-import { Gallery } from "@/components/Gallery";
-import { Portfolio } from "@/components/Portfolio";
-import { Services } from "@/components/Services";
-import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import Aurora from "@/components/Aurora";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-x-hidden">
+      <Aurora
+        colorStops={["#0F172A", "#0D9488", "#10B981"]}
+        blend={0.7}
+        amplitude={1.2}
+        speed={0.8}
+      />
       {/* Content overlay */}
       <div className="relative z-10">
         <Navigation />
-        <main>
-          <Hero />
-          <About />
-          <Tools />
-          <Gallery />
-          <Portfolio />
-          <Services />
-          <Contact />
+        <main className="min-h-[calc(100vh-200px)] flex items-center justify-center">
+          {/* We will build the new sections here */}
         </main>
         <Footer />
       </div>
