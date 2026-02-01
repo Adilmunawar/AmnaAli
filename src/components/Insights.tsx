@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -34,7 +33,7 @@ export const Insights = () => {
                 transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
               >
                 <Link href={`/insights/${article.id}`} passHref>
-                  <div className="group relative flex flex-col md:flex-row items-center gap-8 rounded-2xl bg-slate-950/30 backdrop-blur-sm border border-white/10 p-6 shadow-lg transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-2">
+                  <div className="group relative flex flex-col md:flex-row items-center gap-8 rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-white/10 p-6 shadow-lg transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-2">
                     <div className="relative h-56 w-full md:w-56 md:h-40 flex-shrink-0 rounded-xl overflow-hidden">
                       {image && (
                         <Image
@@ -53,7 +52,7 @@ export const Insights = () => {
                         <BrainCircuit className="w-4 h-4"/>
                         {article.category}
                       </p>
-                      <h3 className="mt-2 text-lg font-semibold text-white leading-tight">
+                      <h3 className="mt-2 text-lg font-semibold text-white leading-tight group-hover:text-accent transition-colors">
                         {article.title}
                       </h3>
                       <p className="mt-3 text-sm text-slate-400">

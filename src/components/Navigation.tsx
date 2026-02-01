@@ -14,13 +14,15 @@ export const Navigation = () => {
     { name: "About", href: "/#about" },
     { name: "Work", href: "/work" },
     { name: "Insights", href: "/insights" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const getActiveTab = () => {
     if (pathname === '/') return 'Home';
     if (pathname.startsWith('/work')) return 'Work';
     if (pathname.startsWith('/insights')) return 'Insights';
-    return 'Home';
+    // Add other conditions for other pages if needed
+    return ''; // Default to no active tab for hash links or other pages
   };
   
   const [activeTab, setActiveTab] = useState(getActiveTab());
@@ -29,7 +31,7 @@ export const Navigation = () => {
     setActiveTab(getActiveTab());
   }, [pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
     if (href.startsWith('/#')) {
       e.preventDefault();
       const targetId = href.substring(2);
@@ -41,6 +43,10 @@ export const Navigation = () => {
         });
       }
       setIsOpen(false);
+      setActiveTab(''); // Deselect active tab for scroll links
+    } else {
+       const clickedItem = navItems.find(item => item.href === href);
+       if (clickedItem) setActiveTab(clickedItem.name);
     }
   };
 
@@ -59,7 +65,7 @@ export const Navigation = () => {
         >
           <div className="relative z-10 flex items-center justify-between px-6 py-2">
             <motion.div whileHover={{ scale: 1.05 }}>
-              <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+              <Link href="/" className="flex items-center space-x-3 cursor-pointer group" onClick={(e) => handleNavClick(e, '/')}>
                   <motion.div 
                     className="relative"
                     whileHover={{ rotate: 15 }}
@@ -78,12 +84,7 @@ export const Navigation = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    onClick={(e) => {
-                      handleNavClick(e, item.href);
-                      if (!item.href.startsWith('/#')) {
-                        setActiveTab(item.name);
-                      }
-                    }}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="relative px-5 py-2.5 rounded-full transition-colors duration-300 text-white/70 hover:text-white"
                   >
                     {activeTab === item.name && (

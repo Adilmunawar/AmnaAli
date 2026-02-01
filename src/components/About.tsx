@@ -79,14 +79,21 @@ export const About = () => {
                 <div>
                     <h3 className="text-xl font-semibold text-white mb-4">HR Solutions (The Core)</h3>
                     <div className="space-y-4">
-                    {coreSolutions.map((solution) => (
-                        <div key={solution.title} className="flex gap-x-3">
-                        <CheckCircle className="mt-1 h-5 w-5 flex-none text-accent" aria-hidden="true" />
-                        <div>
-                            <p className="font-semibold text-white">{solution.title}</p>
-                            <p className="text-slate-400">{solution.description}</p>
-                        </div>
-                        </div>
+                    {coreSolutions.map((solution, index) => (
+                        <motion.div
+                          key={solution.title}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex gap-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
+                        >
+                          <CheckCircle className="mt-1 h-5 w-5 flex-none text-accent" aria-hidden="true" />
+                          <div>
+                              <p className="font-semibold text-white">{solution.title}</p>
+                              <p className="text-slate-400">{solution.description}</p>
+                          </div>
+                        </motion.div>
                     ))}
                     </div>
                 </div>
@@ -95,14 +102,21 @@ export const About = () => {
                 <div>
                     <h3 className="text-xl font-semibold text-white mb-4">Growth Solutions (The "Modern Edge")</h3>
                     <div className="space-y-4">
-                    {growthSolutions.map((solution) => (
-                        <div key={solution.title} className="flex gap-x-3">
-                        <CheckCircle className="mt-1 h-5 w-5 flex-none text-accent" aria-hidden="true" />
-                        <div>
-                            <p className="font-semibold text-white">{solution.title}</p>
-                            <p className="text-slate-400">{solution.description}</p>
-                        </div>
-                        </div>
+                    {growthSolutions.map((solution, index) => (
+                        <motion.div
+                          key={solution.title}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: (coreSolutions.length + index) * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex gap-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
+                        >
+                          <CheckCircle className="mt-1 h-5 w-5 flex-none text-accent" aria-hidden="true" />
+                          <div>
+                              <p className="font-semibold text-white">{solution.title}</p>
+                              <p className="text-slate-400">{solution.description}</p>
+                          </div>
+                        </motion.div>
                     ))}
                     </div>
                 </div>
