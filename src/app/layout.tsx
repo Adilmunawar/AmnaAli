@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import Aurora from "@/components/Aurora";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,7 +43,9 @@ export default function RootLayout({
                 speed={0.8}
               />
               <div className="relative z-10 flex flex-col min-h-screen">
+                <Navigation />
                 {children}
+                <Footer />
               </div>
             </div>
         </Providers>
