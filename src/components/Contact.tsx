@@ -31,13 +31,13 @@ export const Contact = () => {
                     className="mt-16 max-w-2xl mx-auto"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        <a href="mailto:contact@arsltd.com" className="group flex items-center gap-4 text-lg p-6 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300">
+                        <a href="mailto:amna1.ali@outlook.com" className="group flex items-center gap-4 text-lg p-6 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300">
                             <div className="flex-shrink-0 w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors">
                                 <Mail className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
                             </div>
                             <div>
                                 <p className="text-slate-400 text-sm">Email</p>
-                                <p className="text-white font-semibold">contact@arsltd.com</p>
+                                <p className="text-white font-semibold">amna1.ali@outlook.com</p>
                             </div>
                         </a>
                         <a href="tel:+923248406582" className="group flex items-center gap-4 text-lg p-6 bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-accent/50 hover:-translate-y-1 transition-all duration-300">
