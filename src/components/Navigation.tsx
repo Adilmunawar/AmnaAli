@@ -34,52 +34,61 @@ export const Navigation = () => {
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     if (href.startsWith('/#')) {
       e.preventDefault();
+      setIsOpen(false);
       const targetId = href.substring(2);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
+        // Offset by the height of the fixed navigation bar
+        const offset = 100;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = targetElement.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
         window.scrollTo({
-          top: targetElement.offsetTop - 100, // Adjust for fixed header
+          top: offsetPosition,
           behavior: 'smooth',
         });
       }
-      setIsOpen(false);
-      setActiveTab(''); // Deselect active tab for scroll links
+      // Temporarily set active tab for hash links for visual feedback
+      const clickedItem = navItems.find(item => item.href === href);
+      if(clickedItem) setActiveTab(clickedItem.name);
     } else {
        const clickedItem = navItems.find(item => item.href === href);
-       if (clickedItem) setActiveTab(clickedItem.name);
+       if (clickedItem) {
+          setActiveTab(clickedItem.name);
+          setIsOpen(false);
+       }
     }
   };
 
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="max-w-4xl mx-auto mt-4 px-4">
-        <motion.div 
-          className="relative bg-slate-950/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl overflow-hidden"
-          transition={{ duration: 0.3 }}
+        <div 
+          className="relative bg-slate-950/60 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl"
         >
-          <div className="relative z-10 flex items-center justify-between px-6 py-2">
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Link href="/" className="flex items-center space-x-3 cursor-pointer group" onClick={(e) => handleNavClick(e, '/')}>
-                  <motion.div 
-                    className="relative"
-                    whileHover={{ rotate: 15 }}
-                  >
-                    <Sparkles className="w-8 h-8 text-accent drop-shadow-[0_0_8px_hsl(var(--accent))]" />
-                  </motion.div>
-                  <div className="text-xl font-bold text-white drop-shadow-lg">
-                    Amna Ali
-                  </div>
-              </Link>
-            </motion.div>
+          <div className="flex items-center justify-between px-6 py-2">
+            <Link href="/" className="flex items-center space-x-3 cursor-pointer group" onClick={(e) => handleNavClick(e, '/')}>
+                <motion.div 
+                  className="relative"
+                  whileHover={{ rotate: 15 }}
+                >
+                  <Sparkles className="w-8 h-8 text-accent drop-shadow-[0_0_8px_hsl(var(--accent))]" />
+                </motion.div>
+                <div className="text-xl font-bold text-white drop-shadow-lg">
+                  Amna Ali
+                </div>
+            </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1 bg-black/10 rounded-full">
+            <nav className="hidden md:flex items-center space-x-1 bg-black/10 rounded-full">
               {navItems.map((item) => (
                   <Link
                     key={item.name}
@@ -89,69 +98,78 @@ export const Navigation = () => {
                   >
                     {activeTab === item.name && (
                       <motion.div
-                        layoutId="active-pill"
+                        layoutId="active-pill-desktop"
                         className="absolute inset-0 bg-white/10"
                         style={{ borderRadius: 9999 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                       />
                     )}
-                    <motion.span 
+                    <span 
                       className="relative z-10 font-medium text-sm"
-                      whileTap={{ scale: 0.95 }}
                     >
                       {item.name}
-                    </motion.span>
+                    </span>
                   </Link>
                 ))}
-            </div>
+            </nav>
 
             {/* Mobile Menu Button */}
             <motion.button
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+              className="md:hidden p-2 text-white bg-white/10 border border-white/20 rounded-full"
+              aria-label="Toggle Menu"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={isOpen ? "x" : "menu"}
+                  initial={{ rotate: 45, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -45, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </motion.div>
+              </AnimatePresence>
             </motion.button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: "auto", y: 0, transition: { staggerChildren: 0.05, when: "beforeChildren" } }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
               exit={{ opacity: 0, height: 0, y: -10 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="md:hidden overflow-hidden mt-2"
             >
-              <div className="bg-slate-900/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-4 space-y-2">
+              <nav className="bg-slate-900/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-4 space-y-2">
                 {navItems.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    variants={{
-                      open: { x: 0, opacity: 1 },
-                      closed: { x: -20, opacity: 0 }
-                    }}
-                    initial="closed"
-                    animate="open"
-                  >
-                    <Link
+                  <Link
+                      key={item.name}
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="block text-white/80 hover:text-white hover:bg-white/10 transition-all py-3 px-4 rounded-xl font-medium"
+                      className="relative block text-white/80 hover:text-white bg-transparent hover:bg-white/10 transition-all py-3 px-4 rounded-xl font-medium"
                     >
-                      <span>{item.name}</span>
+                      {activeTab === item.name && (
+                        <motion.div
+                          layoutId="active-pill-mobile"
+                          className="absolute inset-0 bg-white/10"
+                          style={{ borderRadius: 12 }}
+                          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        />
+                      )}
+                       <span className="relative z-10">{item.name}</span>
                     </Link>
-                  </motion.div>
                 ))}
-              </div>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </motion.header>
   );
 };

@@ -40,7 +40,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="relative bg-slate-950/20 backdrop-blur-md pt-24 pb-8 mt-auto">
+    <footer className="bg-slate-950/20 backdrop-blur-md pt-24 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Brand & Contact Section */}

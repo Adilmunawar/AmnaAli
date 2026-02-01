@@ -7,14 +7,22 @@ export const Hero = () => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      // Offset by the height of the fixed navigation bar
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
         behavior: 'smooth',
       });
     }
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-[calc(100vh-88px)] overflow-hidden flex items-center justify-center">
       
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">

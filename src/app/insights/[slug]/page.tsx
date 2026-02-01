@@ -22,7 +22,7 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
     const image = placeholderImages.find(p => p.id === article.imageId);
 
     return (
-        <main className="flex-grow pt-32 pb-16 bg-slate-950/20">
+        <main className="flex-grow pt-32 pb-16">
             <article className="max-w-4xl mx-auto px-6 lg:px-8">
                 <header className="mb-12">
                     <div className="mb-8">
@@ -38,7 +38,7 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
                     <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
                         {article.title}
                     </h1>
-                    <p className="mt-6 text-lg leading-8 text-slate-300">
+                    <p className="mt-6 text-xl leading-8 text-slate-300">
                         {article.excerpt}
                     </p>
                     <div className="mt-6 flex items-center gap-6 text-sm text-slate-400 border-t border-b border-white/10 py-4">
@@ -67,13 +67,13 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                 </div>
 
-                <div className="prose prose-invert prose-lg max-w-none mx-auto
-                    prose-p:text-slate-300 
-                    prose-headings:text-white prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8
+                <div className="prose prose-invert prose-xl max-w-none mx-auto
+                    prose-p:text-slate-300 prose-p:leading-relaxed
+                    prose-headings:text-white prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-12
                     prose-a:text-accent prose-a:font-semibold prose-a:transition-colors hover:prose-a:text-teal-300
                     prose-strong:text-white 
                     prose-ul:list-disc prose-ul:pl-6 prose-li:marker:text-accent
-                    prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-400">
+                    prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-400 prose-blockquote:text-lg">
                     
                     <p>
                         In today's competitive talent market, simply posting a job description and waiting for applications is a recipe for mediocrity. Top candidates are passive, discerning, and inundated with offers. To capture their attention, your recruitment strategy must evolve. It needs to adopt the principles of modern marketing and design, transforming a simple job post into a compelling brand statement.
@@ -109,7 +109,7 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
                     <h3>3. Storytelling Through Imagery and Video</h3>
                     <p>A picture is worth a thousand words, and in recruitment, it could be worth a thousand applications. Include high-quality photos of your team and office. Better yet, embed a short video where team members talk about the company culture. This builds an immediate emotional connection that text alone cannot achieve.</p>
                     
-                    <div className="mt-12 pt-8 border-t border-white/10 text-center">
+                    <div className="mt-16 pt-8 border-t border-white/10 text-center">
                         <Link href="/insights" className="inline-flex items-center gap-2 text-accent font-semibold hover:underline">
                             <ArrowLeft className="w-4 h-4"/>
                             Back to all insights

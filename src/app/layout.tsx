@@ -33,15 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-slate-900`}>
         <Providers>
             <div className="min-h-screen relative overflow-x-hidden">
-              <Aurora
-                colorStops={["#0F172A", "#0D9488", "#10B981"]}
-                blend={0.7}
-                amplitude={1.2}
-                speed={0.8}
-              />
+              <Aurora />
               <div className="relative z-10 flex flex-col min-h-screen">
                 <Navigation />
                 {children}
