@@ -30,7 +30,7 @@ const growthSolutions = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-slate-900/50">
+    <section id="about" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* Image Section */}

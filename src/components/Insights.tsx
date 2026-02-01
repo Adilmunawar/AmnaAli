@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export const Insights = () => {
   return (
-    <section id="insights" className="py-24 sm:py-32 bg-slate-900/50">
+    <section id="insights" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold leading-7 text-accent">Insights</h2>
@@ -34,7 +34,7 @@ export const Insights = () => {
                 transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
               >
                 <Link href={`/insights/${article.id}`} passHref>
-                  <div className="group relative flex flex-col md:flex-row items-center gap-8 rounded-2xl bg-slate-900/50 border border-white/10 p-6 shadow-lg transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-2">
+                  <div className="group relative flex flex-col md:flex-row items-center gap-8 rounded-2xl bg-slate-950/30 backdrop-blur-sm border border-white/10 p-6 shadow-lg transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-2">
                     <div className="relative h-56 w-full md:w-56 md:h-40 flex-shrink-0 rounded-xl overflow-hidden">
                       {image && (
                         <Image

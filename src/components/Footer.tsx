@@ -26,7 +26,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-slate-950/30 backdrop-blur-md overflow-hidden pt-16 mt-auto">
+    <footer className="relative bg-transparent backdrop-blur-md pt-16 mt-auto">
       <div className="relative z-20">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-6">

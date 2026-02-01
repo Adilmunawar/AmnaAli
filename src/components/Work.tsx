@@ -14,7 +14,7 @@ const icons = {
 
 export const Work = () => {
   return (
-    <section id="work" className="py-24 sm:py-32 bg-slate-950/40">
+    <section id="work" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold leading-7 text-accent">Case Studies</h2>
@@ -36,7 +36,7 @@ export const Work = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.2, ease: 'easeOut' }}
-                className="flex flex-col overflow-hidden rounded-2xl bg-slate-900/50 border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30"
+                className="flex flex-col overflow-hidden rounded-2xl bg-slate-950/30 backdrop-blur-sm border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-accent/20 hover:border-accent/30"
               >
                 <div className="relative h-56 w-full">
                   {image && (
