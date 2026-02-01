@@ -1,7 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronRight, Award, Briefcase, Users, TrendingUp } from "lucide-react";
-import Link from 'next/link';
+import { ArrowDown, ChevronRight, Briefcase, Users, TrendingUp } from "lucide-react";
 
 export const Hero = () => {
 
@@ -25,18 +24,15 @@ export const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          {/* Animated Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, type: 'spring', stiffness: 150 }}
-            className="inline-block mb-6"
+          
+          <motion.p
+            className="text-2xl md:text-3xl font-bold text-accent mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                <Award className="w-5 h-5 text-accent" />
-                <span className="text-sm font-semibold text-slate-200">Decade of HR Excellence</span>
-            </div>
-          </motion.div>
+            Amna Ali
+          </motion.p>
 
           {/* Main Headline */}
           <motion.h1
