@@ -1,6 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronRight, Award, Briefcase, Users } from "lucide-react";
+import { ArrowDown, ChevronRight, Award, Briefcase, Users, TrendingUp } from "lucide-react";
 import Link from 'next/link';
 
 export const Hero = () => {
